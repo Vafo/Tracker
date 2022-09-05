@@ -1,3 +1,4 @@
+from curses.ascii import isascii
 import enum
 import os
 
@@ -14,13 +15,25 @@ def read_bin(filename: str):
             print(hex(big + prev_size)[3:] + ': ', end='')
             prev_size += len(row)
 
+            
+            str_content = '     |'
+
             delim = ['', ' ']
             i = 0
             for byte in row:
                 out = hex(byte + 256)[3:]
                 print(out, end=delim[i])
                 i ^= 1
-            print()
+
+                ch = chr(byte)
+                if ch.isascii() and ch.isprintable():
+                    str_content += ch
+                else:
+                    str_content += '.'
+
+            str_content += '|'
+            
+            print(str_content)
             row = file.read(16)
 
 
