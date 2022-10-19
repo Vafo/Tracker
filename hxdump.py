@@ -36,7 +36,7 @@ def read_bin(filename: str):
             print(str_content)
             row = file.read(16)
 
-
+// Prints content of local files with extension .sdocx
 working_dir = os.getenv("pwd")
 print(working_dir)
 
@@ -52,4 +52,5 @@ for f in aboba:
 for idx, el in enumerate(todos):
     print(idx, el)
 choice = int(input())
-read_bin(todos[choice])
+#read_bin(todos[choice])
+read_bin('text.txt')
