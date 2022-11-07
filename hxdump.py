@@ -36,7 +36,7 @@ def read_bin(filename: str):
             print(str_content)
             row = file.read(16)
 
-// Prints content of local files with extension .sdocx
+# Prints content of local files with extension .sdocx
 working_dir = os.getenv("pwd")
 print(working_dir)
 
